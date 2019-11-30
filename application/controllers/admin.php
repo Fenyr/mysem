@@ -83,5 +83,11 @@ class admin extends CI_Controller
 		$this->load->view("admin/table", $data);
 		$this->load->view("template/adm_foot");
 	}
+	public function sm()
+	{
+		$this->load->view("template/adm_head");
+		$this->load->view("admin/seminar");
+		$this->load->view("template/adm_foot");
+	}
 }
 ?>

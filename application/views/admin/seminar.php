@@ -31,15 +31,15 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= base_url('admin/sm'); ?>" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Atur Seminar</span>
         </a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Kelola Akun</span>
@@ -155,122 +155,46 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tabel Akun</h1>
+          <h1 class="h3 mb-2 text-gray-800">Tabel Seminar</h1>
           <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header">
-              <h6 class="m-0 font-weight-bold text-primary">Informasi Akun</h6>
-              <div align="right"><button class="btn btn-warning" id="add">Tambah Data</button></div>
-            </div>
+              <h6 class="m-0 font-weight-bold text-primary">Informasi Seminar</h6>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>id</th>
-                      <th>Nama</th>
-                      <th>Password</th>
+                      <th>Nama Seminar</th>
+                      <th>Diposting Oleh</th>
+                      <th>Jumlah Peserta</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>id</th>
-                      <th>Nama</th>
-                      <th>Password</th>
+                      <th>Nama Seminar</th>
+                      <th>Diposting Oleh</th>
+                      <th>Jumlah Peserta</th>
                       <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                      <?php if ($akun -> num_rows() > 0): ?>
-                        <?php foreach ($akun -> result() as $p): ?>
-                          <tr>
-                          <td><?php echo $p->id_user; ?></td>
-                          <td><?php echo $p->username; ?></td>
-                          <td><?php echo $p->password; ?></td>
-                          <td>
-                            <?php echo anchor('admin/tp/?id='.$p->id_user.'&username='.$p->username.'&pw='.$p->password,'<i class="fas fa-edit"></i>Edit'); ?>
-                             &nbsp;<?php echo anchor('admin/delete/'.$p->id_user,'<i class="text-danger fas fa-trash"></i><font color="red">Hapus</font>'); ?> &nbsp; <?php echo anchor('admin/reset/'.$p->id_user,'<i class="text-secondary fas"></i><font color="grey">Reset</font>'); ?>
-                           </td>
-                         </tr>
-                        <?php endforeach ?>
-                      <?php endif ?>                   
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>             
                   </tbody>
                 </table>
               <div>
-              <script type="text/javascript">
-              $("#add").click(function(){
-                $("#addf").modal();
-              });
-              </script>
-              <?php if (!empty($_GET)): ?>
-                <script type="text/javascript">
-                $(window).on('load',function(){
-                  $("#editf").modal();
-                });
-              </script>
-              <?php endif ?>
-              <div class="modal fade" id="addf" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Tambah Data</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form method="post" action="<?php echo base_url('admin/add');?>">
-                          <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" placeholder="Masukan Username" name="us">
-                          </div>
-                          <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Masukkan Password" name="pw">
-                          </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Tambah</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+             
 
-              <div class="modal fade" id="editf" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Edit Data</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form method="post" action="<?php echo base_url('admin/update'); ?>">
-                            <input type="hidden" class="form-control" name="id" placeholder="Masukan ID" value="<?php echo $_GET['id']; ?>" readonly>
-                          <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" name="username" placeholder="Masukan Username" value="<?php echo $_GET['username']; ?>">
-                          </div>
-                          <div class="form-group">
-                            <label>Password</label>
-                            <input type="text" class="form-control" name="password" value="<?php echo $_GET['pw']; ?>" placeholder="Masukkan Password">
-                          </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button"class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+             
               </div>
               </div>
             </div>

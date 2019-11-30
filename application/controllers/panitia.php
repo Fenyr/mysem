@@ -67,5 +67,17 @@ class panitia extends CI_Controller
 		$this->mod_panitia->update_data($where,$data,'pendaftaran');
 		redirect('panitia/transaksi/'.$s);
 	}
+	public function tambah()
+	{
+		$this->load->view("template/header");
+		$this->load->view("panitia/tambah");
+		$this->load->view("template/footer");
+	}
+	public function edit($id)
+	{
+		$this->load->view("template/header");
+		$this->load->view("panitia/edit");
+		$this->load->view("template/footer");
+	}
 }
 ?>

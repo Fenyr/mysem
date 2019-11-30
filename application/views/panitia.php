@@ -33,11 +33,10 @@
                                 <li class="nav-item ml-5"></li>
                                 <li class="nav-item ml-5"></li>
                                 <li class="nav-item ml-5"></li>
-                                <li class="ml-5"><button class="btn btn-warning" id="add">Buat Postingan</button></li>
+                                <li class="ml-5"><a href="<?php echo base_url('panitia/tambah') ?>"><button class="btn btn-warning" >Buat Postingan</button></a></li>
                             </ul>
 
                             <div class="tab-content" id="myTabContent2">
-
                                 <div class="tab-pane fade show active" id="world-tab-10" role="tabpanel" aria-labelledby="tab10">
                                     <div class="row">
                                          <?php if ($sp -> num_rows() > 0): ?>
@@ -57,12 +56,12 @@
                                                                 <h5><?php echo $s->judul; ?></h5>
                                                             </a>
 
-                                                                    <p><a href="#" class="post-author"><?php echo $s->username; ?></a> Pada <a href="#" class="post-date"><?php echo $s->created; ?></a></p>
+                                                            <p><a href="#" class="post-author"><?php echo $s->username; ?></a> Pada <a href="#" class="post-date"><?php echo $s->created; ?></a></p>
                                                             <p><?php echo substr($s->deskripsi,0,80); ?> <a href='#'>Readmore.....</a></p>
                                                             <!-- Post Meta -->
                                                             <div class="post-meta">
                                                                 <span>
-                                                                    <button class="btn btn-outline-primary">Edit</button>  
+                                                                    <a href="<?php echo base_url('panitia/edit/'.$s->id_sem)?>"><button class="btn btn-outline-primary">Edit</button></a>
                                                                 </span>
                                                                 <span>
                                                                     <button class="btn btn-outline-danger">Request Delete</button>  
@@ -88,40 +87,7 @@
 
                     </div>
                 </div>
-
-                <script type="text/javascript">
-                  $("#add").click(function(){
-                    $("#addf").modal();
-                  });
-                </script>
-                <div class="modal fade" id="addf" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Tambah Data</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form method="post" action="<?php echo base_url('admin/add');?>">
-                          <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" placeholder="Masukan Username" name="us">
-                          </div>
-                          <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Masukkan Password" name="pw">
-                          </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Tambah</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+               
                 <!-- ========== Sidebar Area ========== -->
                 <div class="col-12 col-md-8 col-lg-4">
                     <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s">
