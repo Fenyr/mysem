@@ -6,11 +6,11 @@ class panitia extends CI_Controller
 		parent::__construct();
 		$this->load->model('mod_panitia');
 		if($this->session->userdata('level') !=2){
-			if ($this->session->userdata('level') == 1) {
-				redirect('');
-			}
-			else if ($this->session->userdata('level') == 3) {
+			if ($this->session->userdata('level') == 3) {
 				redirect('admin');
+			}
+			else{
+				redirect('');
 			}
 		}
 
