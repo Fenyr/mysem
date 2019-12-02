@@ -34,5 +34,10 @@ class mod_panitia extends CI_Model
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+	public function kt()
+	{
+		$query=$this->db->get('kategori');
+		return $query;
+	}
 }
 ?>

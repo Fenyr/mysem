@@ -36,9 +36,12 @@
                                     <input type="text" name="judul" class="form-control">
                                 </div>
                                 <div class="col">
+                                <div class="col">
                                 <label>Kategori</label>
                                     <select class="form-control">
-                                        <option>Pendidikan</option>
+                                        <?php foreach ($kt -> result() as $k): ?>
+                                            <option><?php echo $k->keterangan ?></option>
+                                        <?php endforeach ?>
                                     </select>
                                 </div>
                             </div>

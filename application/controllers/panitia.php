@@ -69,14 +69,16 @@ class panitia extends CI_Controller
 	}
 	public function tambah()
 	{
+		$data["kt"]=$this->mod_panitia->kt();
 		$this->load->view("template/header");
-		$this->load->view("panitia/tambah");
+		$this->load->view("panitia/tambah",$data);
 		$this->load->view("template/footer");
 	}
 	public function edit($id)
 	{
+		$data["kt"]=$this->mod_panitia->kt();
 		$this->load->view("template/header");
-		$this->load->view("panitia/edit");
+		$this->load->view("panitia/edit",$data);
 		$this->load->view("template/footer");
 	}
 }
