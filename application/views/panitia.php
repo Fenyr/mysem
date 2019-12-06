@@ -46,7 +46,7 @@
                                                     <div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.2s">
                                                         <!-- Post Thumbnail -->
                                                         <div class="post-thumbnail">
-                                                            <img src="<?php echo base_url('asset/img/blog-img/b2.jpg')?>" alt="">
+                                                            <img src="<?php echo base_url('asset/img/upload/'.$s->foto)?>" alt="">
                                                             <!-- Catagory -->
                                                             <div class="post-cta"><a href="#"><?php echo $s->keterangan; ?></a></div>
                                                         </div>
@@ -64,7 +64,7 @@
                                                                     <a href="<?php echo base_url('panitia/edit/'.$s->id_sem)?>"><button class="btn btn-outline-primary">Edit</button></a>
                                                                 </span>
                                                                 <span>
-                                                                    <button class="btn btn-outline-danger">Request Delete</button>  
+                                                                    <a href="<?php echo base_url('panitia/delete/'.$s->id_sem.'/'.$s->foto)?>"><button class="btn btn-outline-danger">Request Delete</button></a>
                                                                 </span>
                                                                 <span>
                                                                 </span>

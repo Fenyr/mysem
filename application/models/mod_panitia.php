@@ -39,5 +39,26 @@ class mod_panitia extends CI_Model
 		$query=$this->db->get('kategori');
 		return $query;
 	}
+	public function get_next_id_seminar() {
+		$query = $this->db->query('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA="mysem" AND TABLE_NAME ="seminar"');
+		return $query->result()[0]->AUTO_INCREMENT;
+	}
+	public function insert_seminar($judul, $speaker, $deskripsi, $fasilitas, $waktu, $foto, $kategori) {
+		$this->db->insert('seminar', array(
+			'id_sem' => NULL,
+			'judul' => $judul,
+			'speaker' => $speaker,
+			'deskripsi' => $deskripsi,
+			'fasilitas' => $fasilitas,
+			'waktu' => $waktu,
+			'foto' => $foto,
+			'create_by' => $this->session->userdata('id'),
+			'kategori' => $kategori
+		));
+	}
+	public function delete_seminar($id) {
+		$this->db->delete('seminar', array('id_sem' => $id));
+
+	}
 }
 ?>

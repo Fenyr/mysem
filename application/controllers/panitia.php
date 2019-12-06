@@ -70,6 +70,38 @@ class panitia extends CI_Controller
 	public function tambah()
 	{
 		$data["kt"]=$this->mod_panitia->kt();
+
+		$data['judul']=$this->input->post('judul');
+		$data['speaker']=$this->input->post('speaker');
+		$data['deskripsi']=$this->input->post('deskripsi');
+		$data['tanggal']=$this->input->post('tanggal');
+		$data['foto']=$this->input->post('foto');
+		$data['fasilitas']=$this->input->post('fasilitas');
+		$data['kategori']=$this->input->post('kategori');
+
+		$this->load->library('form_validation');
+		$config['file_name'] = $this->mod_panitia->get_next_id_seminar();
+        $config['upload_path'] = 'asset/img/upload/';
+		$config['allowed_types'] = 'gif|jpg|png';
+
+		$this->load->library('upload', $config);
+		
+		if (!empty($_POST)) {
+			$this->form_validation->set_rules('judul', 'Judul', 'required');
+			$this->form_validation->set_rules('speaker', 'Speaker', 'required');
+			$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
+			$this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
+			$this->form_validation->set_rules('fasilitas', 'Fasilitas', 'required');
+
+			if ($this->form_validation->run() != FALSE) {
+				if ($this->upload->do_upload('foto')) {
+					$this->mod_panitia->insert_seminar($data['judul'], $data['speaker'], $data['deskripsi'],
+						$data['fasilitas'], $data['tanggal'], $config['file_name'].$this->upload->data()['file_ext'], $data['kategori']);
+					redirect('panitia');
+				}
+            }
+		}
+
 		$this->load->view("template/header");
 		$this->load->view("panitia/tambah",$data);
 		$this->load->view("template/footer");
@@ -80,6 +112,11 @@ class panitia extends CI_Controller
 		$this->load->view("template/header");
 		$this->load->view("panitia/edit",$data);
 		$this->load->view("template/footer");
+	}
+	public function delete($id, $foto) {
+		$this->mod_panitia->delete_seminar($id);
+		unlink('asset/img/upload/'.$foto);
+		redirect('panitia');
 	}
 }
 ?>
