@@ -1,17 +1,11 @@
-    <!-- ********** Hero Area Start ********** -->
-    <div class="hero-area height-600 bg-img background-overlay" style="background-image: url(<?= base_url('asset/img/blog-img/bg2.jpg') ?>);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6">
-                    <div class="single-blog-title text-center">
-                        <h3>Daftar Seminar</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ********** Hero Area End ********** -->
-
+<style type="text/css">
+    .mta{
+    margin-top: 80px;
+    }
+</style>
+<div class="mta">
+    <hr>
+</div>
     <div class="main-content-wrapper section-padding-100">
         <div class="container">
             <div class="row justify-content-center">

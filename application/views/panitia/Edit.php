@@ -1,5 +1,12 @@
-
-    <div class="main-content-wrapper section-padding-100 mt-50">
+<style type="text/css">
+    .mta{
+    margin-top: 80px;
+    }
+</style>
+<div class="mta">
+    <hr>
+</div>
+    <div class="main-content-wrapper section-padding-100">
         <div class="container">
             <div class="row justify-content-center">
                 <!-- ============= Post Content Area Start ============= -->
@@ -25,9 +32,15 @@
                                 <label>Tanggal Acara</label>
                                 <input type="datetime-local" name="Speaker" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label>Foto</label>
-                                <input type="file" name="foto" class="form-control">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Foto</label>
+                                <input type="file" name="foto" value="<?=$foto?>" class="form-control">
+                                </div>
+                                <div class="col">
+                                <label>Lokasi</label>
+                                <input type="text" name="lokasi" value="<?=$lokasi?>" class="form-control">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">

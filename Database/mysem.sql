@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2019 at 07:40 AM
+-- Generation Time: Dec 13, 2019 at 09:32 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -51,7 +51,7 @@ INSERT INTO `akun` (`id_user`, `username`, `password`, `level`, `id_data`) VALUE
 (16, 'asc', 'cfcd208495d565ef66e7dff9f98764da', 1, NULL),
 (17, 'ringo', '598f5ef3f0d31cfc6743f79614b0c56e', 1, NULL),
 (19, 'rino', 'af7ffc2a629a1c258336fde8a1f71e0a', 1, NULL),
-(20, 'hsd', '2f73f3283b3e917d6c533b1dcb453735', 1, NULL);
+(21, 'baru', '5ef035d11d74713fcb36f2df26aa7c3d', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,8 @@ CREATE TABLE `pendaftaran` (
 --
 
 INSERT INTO `pendaftaran` (`id`, `id_user`, `id_seminar`, `status`) VALUES
-(1, 5, 1, 1);
+(1, 5, 1, 2),
+(2, 21, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -111,6 +112,7 @@ CREATE TABLE `seminar` (
   `waktu` datetime NOT NULL,
   `foto` varchar(100) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lokasi` varchar(200) NOT NULL,
   `create_by` int(11) NOT NULL,
   `kategori` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -119,8 +121,8 @@ CREATE TABLE `seminar` (
 -- Dumping data for table `seminar`
 --
 
-INSERT INTO `seminar` (`id_sem`, `judul`, `speaker`, `deskripsi`, `fasilitas`, `waktu`, `foto`, `created`, `create_by`, `kategori`) VALUES
-(1, 'Seminar Nasional Technoprener 2019', 'Drs. Koko Srimulyo, M.Si.', 'Seminar Nasional (TechnoPreneur) dengan tema \"How tech Inovations Have created a New Generation of Bilionaires\"', 'Sertifikat, Snack, Seminar Kit, Ilmu Yan', '2019-10-30 07:00:00', 'ex1.jpg', '2019-11-28 04:24:19', 6, 3);
+INSERT INTO `seminar` (`id_sem`, `judul`, `speaker`, `deskripsi`, `fasilitas`, `waktu`, `foto`, `created`, `lokasi`, `create_by`, `kategori`) VALUES
+(1, 'Seminar Nasional Technoprener 2019', 'Drs. Koko Srimulyo, M.Si.', 'Seminar Nasional (TechnoPreneur) dengan tema \"How tech Inovations Have created a New Generation of Bilionaires\"', 'Sertifikat, Snack, Seminar Kit, Ilmu Yan', '2019-10-30 07:00:00', 'b1.jpg', '2019-12-13 08:19:26', 'Gedung Audit lt.2', 6, 3);
 
 -- --------------------------------------------------------
 
@@ -185,7 +187,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -197,13 +199,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `seminar`
 --
 ALTER TABLE `seminar`
-  MODIFY `id_sem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_sem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `status`

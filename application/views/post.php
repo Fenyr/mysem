@@ -59,6 +59,7 @@
                                                 <p>Speaker : <?php echo $g->speaker; ?></p>
                                                 <p>Waktu : <?php echo $g->waktu; ?></p>
                                                 <p>Fasilitas : <?php echo $g->fasilitas; ?></p>
+                                                <p>Lokasi : <?php echo $g->lokasi; ?></p>
                                             </span>
 
                                             <caption>Pendaftaran</caption>                                           

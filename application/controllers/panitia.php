@@ -76,6 +76,7 @@ class panitia extends CI_Controller
 		$data['deskripsi']=$this->input->post('deskripsi');
 		$data['tanggal']=$this->input->post('tanggal');
 		$data['foto']=$this->input->post('foto');
+		$data['lokasi']=$this->input->post('lokasi');
 		$data['fasilitas']=$this->input->post('fasilitas');
 		$data['kategori']=$this->input->post('kategori');
 
@@ -90,13 +91,14 @@ class panitia extends CI_Controller
 			$this->form_validation->set_rules('judul', 'Judul', 'required');
 			$this->form_validation->set_rules('speaker', 'Speaker', 'required');
 			$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
+			$this->form_validation->set_rules('lokasi', 'Lokasi', 'required');
 			$this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
 			$this->form_validation->set_rules('fasilitas', 'Fasilitas', 'required');
 
 			if ($this->form_validation->run() != FALSE) {
 				if ($this->upload->do_upload('foto')) {
 					$this->mod_panitia->insert_seminar($data['judul'], $data['speaker'], $data['deskripsi'],
-						$data['fasilitas'], $data['tanggal'], $config['file_name'].$this->upload->data()['file_ext'], $data['kategori']);
+						$data['fasilitas'], $data['lokasi'], $data['tanggal'], $config['file_name'].$this->upload->data()['file_ext'], $data['kategori']);
 					redirect('panitia');
 				}
             }
