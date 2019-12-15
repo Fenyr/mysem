@@ -4,7 +4,7 @@
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="single-blog-title text-center">
-                        <h3>Selamat Datang</h3>
+                        <h3>Selamat Datang Kembali!</h3>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                                                                     <a href="<?php echo base_url('panitia/edit/'.$s->id_sem)?>"><button class="btn btn-outline-primary">Edit</button></a>
                                                                 </span>
                                                                 <span>
-                                                                    <a href="<?php echo base_url('panitia/delete/'.$s->id_sem.'/'.$s->foto)?>"><button class="btn btn-outline-danger">Request Delete</button></a>
+                                                                    <a href="<?php echo base_url('panitia/delete/'.$s->id_sem.'/'.$s->foto)?>"><button class="btn btn-outline-danger">Delete</button></a>
                                                                 </span>
                                                                 <span>
                                                                 </span>

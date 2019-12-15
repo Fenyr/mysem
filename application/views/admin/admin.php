@@ -172,7 +172,7 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $ps->num_rows() ?></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      <i class="fas fa-address-book fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -188,11 +188,11 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Project</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">30%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">90%</div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
@@ -215,7 +215,7 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $pn->num_rows() ?></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                      <i class="fas fa-address-card fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -242,25 +242,21 @@
                   <h6 class="m-0 font-weight-bold text-primary">Progres</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold">Framework<span class="float-right">40%</span></h4>
+                  <h4 class="small font-weight-bold">Framework<span class="float-right">100%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Interface<span class="float-right">30%</span></h4>
+                  <h4 class="small font-weight-bold">Interface<span class="float-right">80%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Editor<span class="float-right">0%</span></h4>
+                  <h4 class="small font-weight-bold">Database<span class="float-right">90%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 90%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Database<span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">CRUD<span class="float-right">0%</span></h4>
+                  <h4 class="small font-weight-bold">CRUD<span class="float-right">60%</span></h4>
                   <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>

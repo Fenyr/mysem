@@ -1,20 +1,14 @@
-    <!-- ********** Hero Area Start ********** -->
-    <div class="hero-area height-600 bg-img background-overlay" style="background-image: url(<?php echo base_url('asset/img/blog-img/b2.jpg')?>);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6">
-                    <?php foreach ($sem -> result() as $g): ?>
-                        <div class="single-blog-title text-center">
-                            <!-- Catagory -->
-                            <div class="post-cta"><a href="#"><?php echo $g->keterangan; ?></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ********** Hero Area End ********** -->
+<style type="text/css">
+    .mta{
+    margin-top: 80px;
+    }
+</style>
+<div class="mta">
+    <hr>
+</div>
+    <?php foreach ($sem -> result() as $g): ?>
 
-        <div class="main-content-wrapper section-padding-100">
+        <div class="main-content-wrapper section-padding-20">
             <div class="container">
                 <div class="row justify-content-center">
                     <!-- ============= Post Content Area ============= -->
@@ -27,6 +21,10 @@
                             </div>
                             <!-- Post Content -->
                             <div class="post-content">
+                                <div>
+                                    <img src="<?php echo base_url('asset/img/upload/'.$g->foto)?>" class="rounded mx-auto d-block" alt="image">
+                                    <br>
+                                </div>
                                 <h6><?php echo $g->deskripsi; ?></h6>
                                         <!-- <blockquote class="mb-30">
                                             <h6>isi...</h6>
@@ -37,7 +35,7 @@
                                         <!-- <h6>Isi...</h6> -->
                                         <!-- Post Tags -->
                                         <ul class="post-tags">
-                                            <li><a href="#"><?php echo $g->keterangan; ?></a></li>
+                                            <li><a href="#">Tags : <?php echo $g->keterangan; ?></a></li>
                                         </ul>
                                         <!-- Post Meta -->
                                         <div class="post-meta second-part">
@@ -59,7 +57,29 @@
                                                 <p>Speaker : <?php echo $g->speaker; ?></p>
                                                 <p>Waktu : <?php echo $g->waktu; ?></p>
                                                 <p>Fasilitas : <?php echo $g->fasilitas; ?></p>
-                                                <p>Lokasi : <?php echo $g->lokasi; ?></p>
+                                                <p>Lokasi : </p>
+                                                <div>
+                                                    <style>
+                                                      #map {
+                                                        height: 200px;  
+                                                        width: 100%;
+                                                       }
+                                                    </style>
+                                                    <div id="map"></div>
+                                                    <script>
+                                                function initMap() {
+                                                  var uluru = {lat: -7.1288145, lng: 112.7224221};
+                                                  var map = new google.maps.Map(
+                                                      document.getElementById('map'), {zoom: 4, center: uluru});
+                                                  var marker = new google.maps.Marker({position: uluru, map: map});
+                                                }
+                                                    </script>
+                                                    <script async defer
+                                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_UfmSqAIij2N1tWgEQI_7mU3Zmfi64K0&callback=initMap">
+                                                    </script>
+                                                </div>
+                                                <br>
+                                                <p><?php echo $g->lokasi; ?></p>
                                             </span>
 
                                             <caption>Pendaftaran</caption>                                           

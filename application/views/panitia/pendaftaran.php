@@ -29,7 +29,6 @@
                                             <thead class="thead-dark">
                                                 <tr>
                                                     <th>Nama Seminar</th>
-                                                    <th>Jumlah Peserta</th>
                                                     <th>Transaksi</th>
                                                 </tr>
                                             </thead>
@@ -37,8 +36,7 @@
                                             <?php foreach ($si -> result() as $s): ?>
                                                 <tr>
                                                     <td><a href="<?php echo base_url('panitia/transaksi/'.$s->id_sem); ?>"><?php echo $s->judul; ?></a></td>
-                                                    <td></td>
-                                                    <td>Pending <span class="badge badge-warning">2</span></td>
+                                                    <td><a href="<?php echo base_url('panitia/transaksi/'.$s->id_sem); ?>">Lihat Transaksi </a><span class="badge badge-warning">!</span></td>
                                                 </tr>
                                             <?php endforeach ?>
                                             
