@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2019 at 09:32 AM
+-- Generation Time: Dec 15, 2019 at 01:25 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -86,16 +86,17 @@ CREATE TABLE `pendaftaran` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_seminar` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `status` int(11) NOT NULL,
+  `bukti` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id`, `id_user`, `id_seminar`, `status`) VALUES
-(1, 5, 1, 2),
-(2, 21, 1, 2);
+INSERT INTO `pendaftaran` (`id`, `id_user`, `id_seminar`, `status`, `bukti`) VALUES
+(1, 5, 1, 1, ''),
+(2, 21, 1, 2, '');
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,10 @@ CREATE TABLE `seminar` (
 --
 
 INSERT INTO `seminar` (`id_sem`, `judul`, `speaker`, `deskripsi`, `fasilitas`, `waktu`, `foto`, `created`, `lokasi`, `create_by`, `kategori`) VALUES
-(1, 'Seminar Nasional Technoprener 2019', 'Drs. Koko Srimulyo, M.Si.', 'Seminar Nasional (TechnoPreneur) dengan tema \"How tech Inovations Have created a New Generation of Bilionaires\"', 'Sertifikat, Snack, Seminar Kit, Ilmu Yan', '2019-10-30 07:00:00', 'b1.jpg', '2019-12-13 08:19:26', 'Gedung Audit lt.2', 6, 3);
+(1, 'Seminar Nasional Technoprener 2019', 'Drs. Koko Srimulyo, M.Si.', 'Seminar Nasional (TechnoPreneur) dengan tema \"How tech Inovations Have created a New Generation of Bilionaires\"', 'Sertifikat, Snack, Seminar Kit, Ilmu Yan', '2019-10-30 07:00:00', 'b1.jpg', '2019-12-13 08:19:26', 'Gedung Audit lt.2', 6, 3),
+(2, 'Seminar Technopreneurship', 'Achmad Husni S.pd, M.pd', 'Deskripsi', 'snack', '2019-10-30 07:00:00', 'b2.jpg', '2019-12-15 09:39:22', 'Lt.3', 6, 3),
+(3, 'Seminar Tata kelola bisnis', 'Hendra S.', 'Test', 'test', '2019-10-30 07:00:00', 'b3.jpg', '2019-12-15 09:39:35', 'lt.2', 6, 2),
+(4, 'Seminar Kesehatan', 'Dr. Soehendra', 'Kesehatan', 'test', '2019-10-30 07:00:00', 'b4.jpg', '2019-12-15 09:41:26', 'lt.1', 6, 5);
 
 -- --------------------------------------------------------
 
@@ -205,7 +209,7 @@ ALTER TABLE `pendaftaran`
 -- AUTO_INCREMENT for table `seminar`
 --
 ALTER TABLE `seminar`
-  MODIFY `id_sem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_sem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `status`
