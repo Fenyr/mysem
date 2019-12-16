@@ -33,7 +33,7 @@
                                 <li class="nav-item ml-5"></li>
                                 <li class="nav-item ml-5"></li>
                                 <li class="nav-item ml-5"></li>
-                                <li class="ml-5"><a href="<?php echo base_url('panitia/tambah') ?>"><button class="btn btn-warning" >Buat Postingan</button></a></li>
+                                <li class="ml-5"><a href="<?php echo base_url('panitia/tambah') ?>"><button class="btn btn-warning" >Buat postingan</button></a></li>
                             </ul>
 
                             <div class="tab-content" id="myTabContent2">
