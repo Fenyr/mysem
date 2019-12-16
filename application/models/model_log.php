@@ -38,5 +38,12 @@ class model_log extends CI_Model
 			redirect('auth');
 		}
 	}
+	public function insert_peserta($user, $pass) {
+		$this->db->insert('akun', array(
+			'id_user' => NULL,
+			'username' => $user,
+			'password' => md5($pass)
+		));
+	}
 }
 ?>
