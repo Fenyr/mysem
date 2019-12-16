@@ -111,6 +111,16 @@ class panitia extends CI_Controller
 	public function edit($id)
 	{
 		$data["kt"]=$this->mod_panitia->kt();
+
+		$data['judul']=$this->input->post('judul');
+		$data['speaker']=$this->input->post('speaker');
+		$data['deskripsi']=$this->input->post('deskripsi');
+		$data['tanggal']=$this->input->post('tanggal');
+		$data['foto']=$this->input->post('foto');
+		$data['lokasi']=$this->input->post('lokasi');
+		$data['fasilitas']=$this->input->post('fasilitas');
+		$data['kategori']=$this->input->post('kategori');
+
 		$this->load->view("template/header");
 		$this->load->view("panitia/edit",$data);
 		$this->load->view("template/footer");

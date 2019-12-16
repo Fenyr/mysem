@@ -36,7 +36,9 @@
                                             <?php foreach ($si -> result() as $s): ?>
                                                 <tr>
                                                     <td><a href="<?php echo base_url('panitia/transaksi/'.$s->id_sem); ?>"><?php echo $s->judul; ?></a></td>
-                                                    <td><a href="<?php echo base_url('panitia/transaksi/'.$s->id_sem); ?>">Lihat Transaksi </a><span class="badge badge-warning">!</span></td>
+                                                    <td><a href="<?php echo base_url('panitia/transaksi/'.$s->id_sem); ?>">Lihat Transaksi </a>
+                                                        <!-- <span class="badge badge-warning">!</span> -->
+                                                    </td>
                                                 </tr>
                                             <?php endforeach ?>
                                             
